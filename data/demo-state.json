@@ -1,0 +1,746 @@
+{
+  "programs": [
+    {
+      "id": "program_skilltip",
+      "title": "SkillTip Discovery Fund",
+      "description": "A Sepolia treasury that rewards creators when the community spots a genuinely useful agent skill design.",
+      "hdIndex": 0,
+      "status": "active",
+      "treasuryAddress": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+      "treasuryBalance": 1000,
+      "createdAt": "2026-03-18T09:00:00.000Z"
+    }
+  ],
+  "rewardPolicies": [
+    {
+      "id": "policy_skilltip",
+      "programId": "program_skilltip",
+      "chain": "sepolia",
+      "asset": "USDT",
+      "enabled": true,
+      "autopilotEnabled": true,
+      "baseReward": 2.5,
+      "minReward": 1.5,
+      "maxReward": 6,
+      "dailyBudget": 15,
+      "confidenceThreshold": 0.72,
+      "autoApproveThreshold": 0.82,
+      "allowPendingClaims": true,
+      "maxRewardsPerDayPerCreator": 2,
+      "updatedAt": "2026-03-19T11:29:25.880Z"
+    }
+  ],
+  "creators": [
+    {
+      "id": "creator_ana",
+      "slug": "ana",
+      "displayName": "Ana Liu",
+      "headline": "Agent infrastructure designer",
+      "bio": "Builds workflow-grade skills for agent orchestration, state repair, and evaluation.",
+      "createdAt": "2026-03-16T08:00:00.000Z"
+    },
+    {
+      "id": "creator_mika",
+      "slug": "mika",
+      "displayName": "Mika Patel",
+      "headline": "Prompt tooling publisher",
+      "bio": "Focuses on reusable prompt scaffolds that make multi-step tool use less brittle.",
+      "createdAt": "2026-03-16T09:00:00.000Z"
+    },
+    {
+      "id": "creator_jo",
+      "slug": "jo",
+      "displayName": "Jo Ramirez",
+      "headline": "Runtime and guardrail builder",
+      "bio": "Publishes safety and recovery primitives that teams can drop into existing agent stacks.",
+      "createdAt": "2026-03-16T10:00:00.000Z"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill_e072f507",
+      "creatorId": "creator_ana",
+      "name": "Schema Guardrail Critic",
+      "tagline": "Turns flaky agent outputs into structured safe retries.",
+      "description": "A reusable skill that scores agent outputs against a schema, produces repair prompts, and feeds a retry plan back into the workflow.",
+      "category": "Evaluation",
+      "repoUrl": "https://github.com/your-org/schema-guardrail-critic",
+      "status": "rewarded",
+      "createdAt": "2026-03-19T11:03:12.332Z"
+    },
+    {
+      "id": "skill_a61052c3",
+      "creatorId": "creator_ana",
+      "name": "Schema Guardrail Critic",
+      "tagline": "Turns flaky agent outputs into structured safe retries.",
+      "description": "A reusable skill that scores agent outputs against a schema, produces repair prompts, and feeds a retry plan back into the workflow.",
+      "category": "Evaluation",
+      "repoUrl": "https://github.com/your-org/schema-guardrail-critic",
+      "status": "published",
+      "createdAt": "2026-03-19T11:03:09.741Z"
+    },
+    {
+      "id": "skill_repair_loop",
+      "creatorId": "creator_ana",
+      "name": "Repair Loop Planner",
+      "tagline": "Converts failed tool outputs into explicit retry plans.",
+      "description": "A reusable skill that inspects broken tool call outputs, explains the failure mode, and drafts a structured retry plan for the supervising agent.",
+      "category": "Recovery",
+      "repoUrl": "https://github.com/skilltip/repair-loop-planner",
+      "status": "rewarded",
+      "createdAt": "2026-03-16T12:00:00.000Z"
+    },
+    {
+      "id": "skill_memory_pruner",
+      "creatorId": "creator_mika",
+      "name": "Context Memory Pruner",
+      "tagline": "Keeps long-running agents focused by compressing noisy traces.",
+      "description": "This skill scores conversation history, preserves only the operationally relevant parts, and emits a compact working memory object for the next agent step.",
+      "category": "Memory",
+      "repoUrl": "https://github.com/skilltip/context-memory-pruner",
+      "status": "rewarded",
+      "createdAt": "2026-03-17T08:20:00.000Z"
+    },
+    {
+      "id": "skill_schema_guard",
+      "creatorId": "creator_jo",
+      "name": "Schema Guardrail Critic",
+      "tagline": "Repairs messy JSON outputs before they hit production tools.",
+      "description": "A portable evaluator that checks structured outputs, explains schema drift, and proposes machine-readable repairs for the next retry.",
+      "category": "Evaluation",
+      "repoUrl": "https://github.com/skilltip/schema-guardrail-critic",
+      "status": "rewarded",
+      "createdAt": "2026-03-17T11:45:00.000Z"
+    }
+  ],
+  "walletBindings": [
+    {
+      "id": "wallet_ana",
+      "creatorId": "creator_ana",
+      "chain": "sepolia",
+      "address": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+      "ownershipVerified": true,
+      "verificationMode": "manual",
+      "verifiedAt": "2026-03-19T11:29:14.426Z"
+    }
+  ],
+  "skillSignals": [
+    {
+      "id": "signal_001",
+      "skillId": "skill_memory_pruner",
+      "signalType": "workflow_usage",
+      "sourceName": "builder feed",
+      "summary": "Included in 14 recent orchestration runs as the memory compression step.",
+      "score": 74,
+      "metadata": {
+        "runs": 14
+      },
+      "createdAt": "2026-03-19T06:10:00.000Z"
+    },
+    {
+      "id": "signal_002",
+      "skillId": "skill_memory_pruner",
+      "signalType": "reuse",
+      "sourceName": "template registry",
+      "summary": "Forked into 5 agent templates focused on customer support and research loops.",
+      "score": 69,
+      "metadata": {
+        "forks": 5
+      },
+      "createdAt": "2026-03-19T06:18:00.000Z"
+    },
+    {
+      "id": "signal_003",
+      "skillId": "skill_schema_guard",
+      "signalType": "repo_velocity",
+      "sourceName": "repo watcher",
+      "summary": "Repo received 7 commits in 48 hours around schema repair and structured retries.",
+      "score": 77,
+      "metadata": {
+        "commits_48h": 7
+      },
+      "createdAt": "2026-03-19T06:45:00.000Z"
+    },
+    {
+      "id": "signal_004",
+      "skillId": "skill_schema_guard",
+      "signalType": "bookmark",
+      "sourceName": "skill feed",
+      "summary": "Saved by 18 builders in the internal shortlist of shipping-grade agent skills.",
+      "score": 72,
+      "metadata": {
+        "saves": 18
+      },
+      "createdAt": "2026-03-19T06:52:00.000Z"
+    }
+  ],
+  "skillSpotlights": [
+    {
+      "id": "spotlight_a4f8ce9c",
+      "programId": "program_skilltip",
+      "skillId": "skill_e072f507",
+      "submittedBy": "hackathon scout",
+      "source": "manual",
+      "context": "We used this skill inside a multi-agent support workflow and it consistently turned ambiguous outputs into reusable action plans.",
+      "whyInteresting": "The design is composable, easy to drop into other agent stacks, and saves repeated prompt engineering every time a tool call returns messy JSON.",
+      "usageSignal": 72,
+      "status": "rewarded",
+      "createdAt": "2026-03-19T11:30:08.637Z"
+    },
+    {
+      "id": "spotlight_69750897",
+      "programId": "program_skilltip",
+      "skillId": "skill_memory_pruner",
+      "submittedBy": "autonomous discovery agent",
+      "source": "agent",
+      "context": "The discovery agent scanned skill feed inputs and found 2 strong signals for Context Memory Pruner. builder feed: Included in 14 recent orchestration runs as the memory compression step. template registry: Forked into 5 agent templates focused on customer support and research loops.",
+      "whyInteresting": "Context Memory Pruner is gaining traction because it looks reusable beyond a single app. The combined repo and usage signals suggest the design solves a recurring agent workflow problem rather than a one-off prompt need.",
+      "usageSignal": 84,
+      "status": "pending_claim",
+      "createdAt": "2026-03-19T11:14:57.725Z"
+    },
+    {
+      "id": "spotlight_699e8126",
+      "programId": "program_skilltip",
+      "skillId": "skill_repair_loop",
+      "submittedBy": "hackathon scout",
+      "source": "manual",
+      "context": "We used this skill inside a multi-agent support workflow and it consistently turned ambiguous outputs into reusable action plans.",
+      "whyInteresting": "The design is composable, easy to drop into other agent stacks, and saves repeated prompt engineering every time a tool call returns messy JSON.",
+      "usageSignal": 72,
+      "status": "rewarded",
+      "createdAt": "2026-03-19T11:03:14.915Z"
+    },
+    {
+      "id": "spotlight_001",
+      "programId": "program_skilltip",
+      "skillId": "skill_repair_loop",
+      "submittedBy": "design scout",
+      "source": "manual",
+      "context": "A support automation team used the skill after a chain of malformed API responses and immediately got cleaner retries plus better failure explanations.",
+      "whyInteresting": "It is not just another prompt. The skill packages diagnosis, retry planning, and reusable failure semantics in a way other agent builders can slot into their workflows.",
+      "usageSignal": 84,
+      "status": "rewarded",
+      "createdAt": "2026-03-18T10:00:00.000Z"
+    },
+    {
+      "id": "spotlight_002",
+      "programId": "program_skilltip",
+      "skillId": "skill_schema_guard",
+      "submittedBy": "hackathon scout",
+      "source": "manual",
+      "context": "During a demo build, this skill repeatedly fixed invalid structured outputs before the agent tried to write to a database.",
+      "whyInteresting": "The design is composable and feels like a missing primitive for teams shipping tools in production. It turns fragile output checking into a reusable guardrail.",
+      "usageSignal": 76,
+      "status": "pending_claim",
+      "createdAt": "2026-03-19T07:45:00.000Z"
+    }
+  ],
+  "discoveryRuns": [
+    {
+      "id": "run_e8d3f73d",
+      "programId": "program_skilltip",
+      "status": "completed",
+      "discoveredCount": 0,
+      "autoRewardedCount": 0,
+      "summary": "Scanned skill feed, repo activity, and usage signals. Created 0 spotlight candidates and auto-rewarded 0.",
+      "createdAt": "2026-03-19T11:30:04.031Z"
+    },
+    {
+      "id": "run_a1184652",
+      "programId": "program_skilltip",
+      "status": "completed_with_rewards",
+      "discoveredCount": 1,
+      "autoRewardedCount": 1,
+      "summary": "Scanned skill feed, repo activity, and usage signals. Created 1 spotlight candidates and auto-rewarded 1.",
+      "createdAt": "2026-03-19T11:15:00.188Z"
+    },
+    {
+      "id": "run_001",
+      "programId": "program_skilltip",
+      "status": "completed",
+      "discoveredCount": 1,
+      "autoRewardedCount": 0,
+      "summary": "Scanned skill feed inputs and detected one promising candidate for human review.",
+      "createdAt": "2026-03-19T07:50:00.000Z"
+    }
+  ],
+  "rewardDecisions": [
+    {
+      "id": "decision_ca8cd227",
+      "spotlightId": "spotlight_a4f8ce9c",
+      "approved": true,
+      "confidence": 0.82,
+      "noveltyScore": 1,
+      "recommendedAmount": 3.5,
+      "summary": "Schema Guardrail Critic looks like a differentiated skill pattern and Ana Liu should be rewarded.",
+      "modelName": "heuristic-skill-judge-v1",
+      "createdAt": "2026-03-19T11:30:10.432Z"
+    },
+    {
+      "id": "decision_fded52c4",
+      "spotlightId": "spotlight_002",
+      "approved": true,
+      "confidence": 0.82,
+      "noveltyScore": 1,
+      "recommendedAmount": 3.5,
+      "summary": "Schema Guardrail Critic looks like a differentiated skill pattern and Jo Ramirez should be rewarded.",
+      "modelName": "heuristic-skill-judge-v1",
+      "createdAt": "2026-03-19T11:17:24.898Z"
+    },
+    {
+      "id": "decision_34e3be03",
+      "spotlightId": "spotlight_69750897",
+      "approved": true,
+      "confidence": 0.82,
+      "noveltyScore": 1,
+      "recommendedAmount": 3.5,
+      "summary": "Context Memory Pruner looks like a differentiated skill pattern and Mika Patel should be rewarded.",
+      "modelName": "heuristic-skill-judge-v1",
+      "createdAt": "2026-03-19T11:14:57.732Z"
+    },
+    {
+      "id": "decision_bbc0c900",
+      "spotlightId": "spotlight_699e8126",
+      "approved": true,
+      "confidence": 0.82,
+      "noveltyScore": 1,
+      "recommendedAmount": 3.5,
+      "summary": "Repair Loop Planner looks like a differentiated skill pattern and Ana Liu should be rewarded.",
+      "modelName": "heuristic-skill-judge-v1",
+      "createdAt": "2026-03-19T11:03:19.130Z"
+    },
+    {
+      "id": "decision_001",
+      "spotlightId": "spotlight_001",
+      "approved": true,
+      "confidence": 0.95,
+      "noveltyScore": 0.88,
+      "recommendedAmount": 3.8,
+      "summary": "Repair Loop Planner packages a reusable retry pattern that meaningfully reduces agent failure recovery work, so tipping the publisher is justified.",
+      "modelName": "gpt-5.4",
+      "createdAt": "2026-03-18T10:05:00.000Z"
+    }
+  ],
+  "tipEvents": [
+    {
+      "id": "tip_04a4afa9",
+      "spotlightId": "spotlight_a4f8ce9c",
+      "programId": "program_skilltip",
+      "totalAmount": 2.04,
+      "asset": "USDT",
+      "chain": "sepolia",
+      "status": "confirmed",
+      "summary": "Schema Guardrail Critic looks like a differentiated skill pattern and Ana Liu should be rewarded.",
+      "createdAt": "2026-03-19T11:30:10.432Z"
+    },
+    {
+      "id": "tip_fa2bb5e1",
+      "spotlightId": "spotlight_002",
+      "programId": "program_skilltip",
+      "totalAmount": 4.31,
+      "asset": "USDT",
+      "chain": "sepolia",
+      "status": "partial_pending",
+      "summary": "Schema Guardrail Critic looks like a differentiated skill pattern and Jo Ramirez should be rewarded.",
+      "createdAt": "2026-03-19T11:17:24.898Z"
+    },
+    {
+      "id": "tip_26b4fb6f",
+      "spotlightId": "spotlight_69750897",
+      "programId": "program_skilltip",
+      "totalAmount": 4.37,
+      "asset": "USDT",
+      "chain": "sepolia",
+      "status": "partial_pending",
+      "summary": "Context Memory Pruner looks like a differentiated skill pattern and Mika Patel should be rewarded.",
+      "createdAt": "2026-03-19T11:14:57.732Z"
+    },
+    {
+      "id": "tip_f8c52e82",
+      "spotlightId": "spotlight_699e8126",
+      "programId": "program_skilltip",
+      "totalAmount": 4.28,
+      "asset": "USDT",
+      "chain": "sepolia",
+      "status": "confirmed",
+      "summary": "Repair Loop Planner looks like a differentiated skill pattern and Ana Liu should be rewarded.",
+      "createdAt": "2026-03-19T11:03:19.130Z"
+    },
+    {
+      "id": "tip_001",
+      "spotlightId": "spotlight_001",
+      "programId": "program_skilltip",
+      "totalAmount": 3.8,
+      "asset": "USDT",
+      "chain": "sepolia",
+      "status": "confirmed",
+      "summary": "Repair Loop Planner packages a reusable retry pattern that meaningfully reduces agent failure recovery work, so tipping the publisher is justified.",
+      "createdAt": "2026-03-18T10:06:00.000Z"
+    }
+  ],
+  "tipTransfers": [
+    {
+      "id": "transfer_43af5257",
+      "tipEventId": "tip_04a4afa9",
+      "recipientCreatorId": "creator_ana",
+      "recipientAddress": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+      "amount": 2.04,
+      "txHash": "0x81d17d1d5b5101f9c238388ef15e61a55f4854da7d671bf0c8b925f233c1882d",
+      "status": "confirmed",
+      "reason": "Schema Guardrail Critic looks like a differentiated skill pattern and Ana Liu should be rewarded.",
+      "createdAt": "2026-03-19T11:30:13.569Z"
+    },
+    {
+      "id": "transfer_e43bc037",
+      "tipEventId": "tip_fa2bb5e1",
+      "recipientCreatorId": "creator_jo",
+      "recipientAddress": null,
+      "amount": 4.31,
+      "txHash": null,
+      "status": "pending_claim",
+      "reason": "Schema Guardrail Critic looks like a differentiated skill pattern and Jo Ramirez should be rewarded. Wallet not bound yet.",
+      "createdAt": "2026-03-19T11:17:24.898Z"
+    },
+    {
+      "id": "transfer_83cef868",
+      "tipEventId": "tip_26b4fb6f",
+      "recipientCreatorId": "creator_mika",
+      "recipientAddress": null,
+      "amount": 4.37,
+      "txHash": null,
+      "status": "pending_claim",
+      "reason": "Context Memory Pruner looks like a differentiated skill pattern and Mika Patel should be rewarded. Wallet not bound yet.",
+      "createdAt": "2026-03-19T11:14:57.732Z"
+    },
+    {
+      "id": "transfer_5f2a1461",
+      "tipEventId": "tip_f8c52e82",
+      "recipientCreatorId": "creator_ana",
+      "recipientAddress": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+      "amount": 4.28,
+      "txHash": "0x49c5fb8540d2c784406912636f31bd2085cdbb8ecdbda10a5205907dacfa1a11",
+      "status": "confirmed",
+      "reason": "Repair Loop Planner looks like a differentiated skill pattern and Ana Liu should be rewarded.",
+      "createdAt": "2026-03-19T11:03:22.067Z"
+    },
+    {
+      "id": "transfer_001",
+      "tipEventId": "tip_001",
+      "recipientCreatorId": "creator_ana",
+      "recipientAddress": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+      "amount": 3.8,
+      "txHash": "0xd0273063433639f6a0a98d3b213eb8d04bc515c3f8538c74173a9dac54466e6c",
+      "status": "confirmed",
+      "reason": "Skill nomination approved.",
+      "createdAt": "2026-03-18T10:06:00.000Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "audit_3e6bdf3d",
+      "createdAt": "2026-03-19T11:30:13.840Z",
+      "entityType": "reward",
+      "entityId": "tip_04a4afa9",
+      "action": "approve",
+      "details": {
+        "creatorId": "creator_ana",
+        "skillId": "skill_e072f507",
+        "amount": 2.04,
+        "txHash": "0x81d17d1d5b5101f9c238388ef15e61a55f4854da7d671bf0c8b925f233c1882d"
+      }
+    },
+    {
+      "id": "audit_ddebc81a",
+      "createdAt": "2026-03-19T11:30:10.432Z",
+      "entityType": "spotlight",
+      "entityId": "spotlight_a4f8ce9c",
+      "action": "evaluate",
+      "details": {
+        "approved": true,
+        "confidence": 0.82,
+        "modelName": "heuristic-skill-judge-v1",
+        "summary": "Schema Guardrail Critic looks like a differentiated skill pattern and Ana Liu should be rewarded."
+      }
+    },
+    {
+      "id": "audit_08df59cc",
+      "createdAt": "2026-03-19T11:30:08.637Z",
+      "entityType": "spotlight",
+      "entityId": "spotlight_a4f8ce9c",
+      "action": "submit_spotlight",
+      "details": {
+        "skillId": "skill_e072f507",
+        "submittedBy": "hackathon scout",
+        "usageSignal": 72
+      }
+    },
+    {
+      "id": "audit_98e34af6",
+      "createdAt": "2026-03-19T11:30:04.031Z",
+      "entityType": "discovery_run",
+      "entityId": "run_e8d3f73d",
+      "action": "run_discovery",
+      "details": {
+        "discoveredCount": 0,
+        "autoRewardedCount": 0,
+        "autopilotEnabled": true
+      }
+    },
+    {
+      "id": "audit_23ef1ec3",
+      "createdAt": "2026-03-19T11:29:25.880Z",
+      "entityType": "program",
+      "entityId": "program_skilltip",
+      "action": "policy_updated",
+      "details": {
+        "baseReward": 2.5,
+        "minReward": 1.5,
+        "maxReward": 6,
+        "dailyBudget": 15,
+        "confidenceThreshold": 0.72,
+        "autoApproveThreshold": 0.82,
+        "maxRewardsPerDayPerCreator": 2,
+        "allowPendingClaims": true,
+        "autopilotEnabled": true,
+        "enabled": true
+      }
+    },
+    {
+      "id": "audit_f0f1367d",
+      "createdAt": "2026-03-19T11:29:14.426Z",
+      "entityType": "wallet_binding",
+      "entityId": "wallet_ana",
+      "action": "bind_creator_wallet",
+      "details": {
+        "creatorId": "creator_ana",
+        "address": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B"
+      }
+    },
+    {
+      "id": "audit_f3c7e04a",
+      "createdAt": "2026-03-19T11:17:27.228Z",
+      "entityType": "reward",
+      "entityId": "tip_fa2bb5e1",
+      "action": "pending_claim",
+      "details": {
+        "creatorId": "creator_jo",
+        "skillId": "skill_schema_guard",
+        "amount": 4.31,
+        "txHash": null
+      }
+    },
+    {
+      "id": "audit_fa1e9bec",
+      "createdAt": "2026-03-19T11:17:24.898Z",
+      "entityType": "spotlight",
+      "entityId": "spotlight_002",
+      "action": "evaluate",
+      "details": {
+        "approved": true,
+        "confidence": 0.82,
+        "modelName": "heuristic-skill-judge-v1",
+        "summary": "Schema Guardrail Critic looks like a differentiated skill pattern and Jo Ramirez should be rewarded."
+      }
+    },
+    {
+      "id": "audit_403f7b13",
+      "createdAt": "2026-03-19T11:15:00.189Z",
+      "entityType": "discovery_run",
+      "entityId": "run_a1184652",
+      "action": "run_discovery",
+      "details": {
+        "discoveredCount": 1,
+        "autoRewardedCount": 1,
+        "autopilotEnabled": true
+      }
+    },
+    {
+      "id": "audit_bdb92729",
+      "createdAt": "2026-03-19T11:15:00.188Z",
+      "entityType": "reward",
+      "entityId": "tip_26b4fb6f",
+      "action": "pending_claim",
+      "details": {
+        "creatorId": "creator_mika",
+        "skillId": "skill_memory_pruner",
+        "amount": 4.37,
+        "txHash": null
+      }
+    },
+    {
+      "id": "audit_dc61cfa9",
+      "createdAt": "2026-03-19T11:14:57.732Z",
+      "entityType": "spotlight",
+      "entityId": "spotlight_69750897",
+      "action": "evaluate",
+      "details": {
+        "approved": true,
+        "confidence": 0.82,
+        "modelName": "heuristic-skill-judge-v1",
+        "summary": "Context Memory Pruner looks like a differentiated skill pattern and Mika Patel should be rewarded."
+      }
+    },
+    {
+      "id": "audit_1d59bb19",
+      "createdAt": "2026-03-19T11:14:57.725Z",
+      "entityType": "spotlight",
+      "entityId": "spotlight_69750897",
+      "action": "submit_spotlight",
+      "details": {
+        "source": "agent",
+        "skillId": "skill_memory_pruner",
+        "usageSignal": 84
+      }
+    },
+    {
+      "id": "audit_1a83e08d",
+      "createdAt": "2026-03-19T11:03:22.310Z",
+      "entityType": "reward",
+      "entityId": "tip_f8c52e82",
+      "action": "approve",
+      "details": {
+        "creatorId": "creator_ana",
+        "skillId": "skill_repair_loop",
+        "amount": 4.28,
+        "txHash": "0x49c5fb8540d2c784406912636f31bd2085cdbb8ecdbda10a5205907dacfa1a11"
+      }
+    },
+    {
+      "id": "audit_fa6f2068",
+      "createdAt": "2026-03-19T11:03:19.130Z",
+      "entityType": "spotlight",
+      "entityId": "spotlight_699e8126",
+      "action": "evaluate",
+      "details": {
+        "approved": true,
+        "confidence": 0.82,
+        "modelName": "heuristic-skill-judge-v1",
+        "summary": "Repair Loop Planner looks like a differentiated skill pattern and Ana Liu should be rewarded."
+      }
+    },
+    {
+      "id": "audit_51e34036",
+      "createdAt": "2026-03-19T11:03:14.916Z",
+      "entityType": "spotlight",
+      "entityId": "spotlight_699e8126",
+      "action": "submit_spotlight",
+      "details": {
+        "skillId": "skill_repair_loop",
+        "submittedBy": "hackathon scout",
+        "usageSignal": 72
+      }
+    },
+    {
+      "id": "audit_e3004394",
+      "createdAt": "2026-03-19T11:03:12.332Z",
+      "entityType": "skill",
+      "entityId": "skill_e072f507",
+      "action": "register_skill",
+      "details": {
+        "creatorId": "creator_ana",
+        "name": "Schema Guardrail Critic",
+        "repoUrl": "https://github.com/your-org/schema-guardrail-critic"
+      }
+    },
+    {
+      "id": "audit_4477ad2a",
+      "createdAt": "2026-03-19T11:03:09.741Z",
+      "entityType": "skill",
+      "entityId": "skill_a61052c3",
+      "action": "register_skill",
+      "details": {
+        "creatorId": "creator_ana",
+        "name": "Schema Guardrail Critic",
+        "repoUrl": "https://github.com/your-org/schema-guardrail-critic"
+      }
+    },
+    {
+      "id": "audit_a245038b",
+      "createdAt": "2026-03-19T11:03:06.100Z",
+      "entityType": "wallet_binding",
+      "entityId": "wallet_ana",
+      "action": "bind_creator_wallet",
+      "details": {
+        "creatorId": "creator_ana",
+        "address": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B"
+      }
+    },
+    {
+      "id": "audit_ac0d87e6",
+      "createdAt": "2026-03-19T11:02:55.603Z",
+      "entityType": "program",
+      "entityId": "program_skilltip",
+      "action": "policy_updated",
+      "details": {
+        "baseReward": 2.5,
+        "minReward": 1.5,
+        "maxReward": 6,
+        "dailyBudget": 15,
+        "confidenceThreshold": 0.72,
+        "autoApproveThreshold": 0.82,
+        "maxRewardsPerDayPerCreator": 2,
+        "allowPendingClaims": true,
+        "autopilotEnabled": true,
+        "enabled": true
+      }
+    },
+    {
+      "id": "audit_001",
+      "entityType": "skill",
+      "entityId": "skill_repair_loop",
+      "action": "register_skill",
+      "details": {
+        "creatorId": "creator_ana",
+        "name": "Repair Loop Planner"
+      },
+      "createdAt": "2026-03-16T12:00:00.000Z"
+    },
+    {
+      "id": "audit_002",
+      "entityType": "wallet_binding",
+      "entityId": "wallet_ana",
+      "action": "bind_wallet",
+      "details": {
+        "creatorId": "creator_ana",
+        "address": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B"
+      },
+      "createdAt": "2026-03-18T09:30:00.000Z"
+    },
+    {
+      "id": "audit_003",
+      "entityType": "spotlight",
+      "entityId": "spotlight_001",
+      "action": "submit_spotlight",
+      "details": {
+        "skillId": "skill_repair_loop",
+        "submittedBy": "design scout"
+      },
+      "createdAt": "2026-03-18T10:00:00.000Z"
+    },
+    {
+      "id": "audit_004",
+      "entityType": "spotlight",
+      "entityId": "spotlight_001",
+      "action": "evaluate",
+      "details": {
+        "approved": true,
+        "confidence": 0.95,
+        "modelName": "gpt-5.4"
+      },
+      "createdAt": "2026-03-18T10:05:00.000Z"
+    },
+    {
+      "id": "audit_005",
+      "entityType": "reward",
+      "entityId": "tip_001",
+      "action": "approve",
+      "details": {
+        "creatorId": "creator_ana",
+        "amount": 3.8,
+        "txHash": "0xd0273063433639f6a0a98d3b213eb8d04bc515c3f8538c74173a9dac54466e6c"
+      },
+      "createdAt": "2026-03-18T10:06:00.000Z"
+    }
+  ]
+}

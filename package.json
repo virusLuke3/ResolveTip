@@ -1,0 +1,29 @@
+{
+  "name": "resolvetip",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "smoke:sepolia": "node scripts/live-sepolia-smoke.mjs"
+  },
+  "dependencies": {
+    "@tetherto/wdk": "^1.0.0-beta.6",
+    "@tetherto/wdk-wallet-evm": "^1.0.0-beta.8",
+    "next": "^16.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "undici": "^7.24.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.0",
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2",
+    "typescript": "5.8.3",
+    "vitest": "^4.1.0"
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "communities": [
+    {
+      "id": "comm_demo",
+      "platform": "telegram",
+      "chatId": "-1001987654321",
+      "title": "WDK Builders CN",
+      "hdIndex": 0,
+      "status": "active",
+      "treasuryAddress": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+      "treasuryBalance": 1000,
+      "createdAt": "2026-03-18T08:00:00.000Z"
+    }
+  ],
+  "rewardPolicies": [
+    {
+      "id": "policy_demo",
+      "communityId": "comm_demo",
+      "chain": "sepolia",
+      "asset": "USDT",
+      "enabled": true,
+      "baseTip": 2,
+      "minTip": 0.5,
+      "maxTip": 5,
+      "dailyBudget": 100,
+      "confidenceThreshold": 0.75,
+      "maxHelpers": 3,
+      "pairCooldownHours": 24,
+      "allowPendingClaims": true,
+      "requireAskerTrigger": true,
+      "excludeBots": true,
+      "updatedAt": "2026-03-18T08:00:00.000Z"
+    }
+  ],
+  "walletBindings": [
+    {
+      "id": "wallet_bob_live",
+      "platformUserId": "user_bob",
+      "displayName": "Bob",
+      "chain": "sepolia",
+      "address": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+      "ownershipVerified": true,
+      "verificationMode": "manual",
+      "verifiedAt": "2026-03-19T03:00:00.000Z"
+    }
+  ],
+  "walletBindingSessions": [
+    {
+      "id": "bind_b03c668e",
+      "platformUserId": "user_bob",
+      "token": "bind_85adef67b2214850bf95032c",
+      "tonProofPayload": "proof_ac4926b7c1a145ccadfdf89d",
+      "status": "pending",
+      "expiresAt": "2026-03-19T01:38:05.812Z",
+      "createdAt": "2026-03-19T01:23:05.812Z",
+      "redirectUrl": null
+    }
+  ],
+  "users": [
+    {
+      "id": "user_admin",
+      "username": "treasury_admin",
+      "displayName": "Admin",
+      "role": "admin"
+    },
+    {
+      "id": "user_alice",
+      "username": "alice",
+      "displayName": "Alice",
+      "role": "asker"
+    },
+    {
+      "id": "user_bob",
+      "username": "bob",
+      "displayName": "Bob",
+      "role": "helper"
+    },
+    {
+      "id": "user_carol",
+      "username": "carol",
+      "displayName": "Carol",
+      "role": "helper"
+    },
+    {
+      "id": "user_dan",
+      "username": "dan",
+      "displayName": "Dan",
+      "role": "helper"
+    },
+    {
+      "id": "user_bot",
+      "username": "resolvetip_bot",
+      "displayName": "ResolveTip Bot",
+      "role": "bot"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread_live_001",
+      "communityId": "comm_demo",
+      "title": "Sepolia USDT transfer fails in test wallet",
+      "askerUserId": "user_alice",
+      "rootMessageId": "msg_live_1001",
+      "status": "paid",
+      "createdAt": "2026-03-19T03:00:00.000Z"
+    }
+  ],
+  "threadMessages": [
+    {
+      "id": "msg_live_1001",
+      "threadId": "thread_live_001",
+      "platformMessageId": "3001",
+      "platformUserId": "user_alice",
+      "replyToMessageId": null,
+      "content": "My Sepolia USDT test transfer is failing after I changed RPC settings. Any idea?",
+      "createdAt": "2026-03-19T03:00:00.000Z"
+    },
+    {
+      "id": "msg_live_1002",
+      "threadId": "thread_live_001",
+      "platformMessageId": "3002",
+      "platformUserId": "user_bob",
+      "replyToMessageId": "msg_live_1001",
+      "content": "Try switching the wallet back to Sepolia RPC, then re-check the USDT token contract and restart the wallet session. That usually fixes the failing transfer path.",
+      "createdAt": "2026-03-19T03:02:00.000Z"
+    },
+    {
+      "id": "msg_live_1003",
+      "threadId": "thread_live_001",
+      "platformMessageId": "3003",
+      "platformUserId": "user_alice",
+      "replyToMessageId": "msg_live_1002",
+      "content": "That worked. The transfer succeeds now. Thank you, this solved it.",
+      "createdAt": "2026-03-19T03:05:00.000Z"
+    }
+  ],
+  "solveEvents": [
+    {
+      "id": "solve_745f35a3",
+      "threadId": "thread_live_001",
+      "communityId": "comm_demo",
+      "triggerUserId": "user_alice",
+      "triggerMessageId": "smoke_openai_live_003",
+      "idempotencyKey": "comm_demo:msg_live_1001:smoke_openai_live_003",
+      "status": "paid",
+      "createdAt": "2026-03-19T03:09:16.203Z"
+    }
+  ],
+  "agentDecisions": [
+    {
+      "id": "decision_2061985c",
+      "solveEventId": "solve_745f35a3",
+      "resolved": true,
+      "confidence": 0.98,
+      "resolutionScore": 96,
+      "helpers": [
+        {
+          "telegramUserId": "user_bob",
+          "messageIds": [
+            "msg_live_1002"
+          ],
+          "contributionScore": 96,
+          "sharePercent": 100,
+          "reason": "Provided the successful troubleshooting steps, and the asker directly confirmed they worked."
+        }
+      ],
+      "abuseFlags": [],
+      "summary": "The asker explicitly confirmed that Bob's suggestion solved the Sepolia USDT transfer issue.",
+      "modelName": "gpt-5.4",
+      "createdAt": "2026-03-19T03:09:23.670Z"
+    }
+  ],
+  "tipEvents": [
+    {
+      "id": "tip_a3cc70d5",
+      "solveEventId": "solve_745f35a3",
+      "communityId": "comm_demo",
+      "totalAmount": 2.9,
+      "asset": "USDT",
+      "chain": "sepolia",
+      "status": "confirmed",
+      "summary": "The asker explicitly confirmed that Bob's suggestion solved the Sepolia USDT transfer issue.",
+      "createdAt": "2026-03-19T03:09:30.669Z"
+    }
+  ],
+  "tipTransfers": [
+    {
+      "id": "transfer_86f720d1",
+      "tipEventId": "tip_a3cc70d5",
+      "recipientUserId": "user_bob",
+      "recipientAddress": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+      "amount": 2.9,
+      "txHash": "0xd0273063433639f6a0a98d3b213eb8d04bc515c3f8538c74173a9dac54466e6c",
+      "status": "confirmed",
+      "reason": "Provided the successful troubleshooting steps, and the asker directly confirmed they worked.",
+      "createdAt": "2026-03-19T03:09:34.080Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "audit_10f7cddf",
+      "entityType": "tip_event",
+      "entityId": "tip_a3cc70d5",
+      "action": "broadcast",
+      "details": {
+        "summary": "The asker explicitly confirmed that Bob's suggestion solved the Sepolia USDT transfer issue.",
+        "recipients": [
+          {
+            "userId": "user_bob",
+            "amount": 2.9,
+            "address": "0x43587B0F79fc341B62FaA73c5533A6Ea6dE0EF8B",
+            "status": "ready",
+            "reason": "Provided the successful troubleshooting steps, and the asker directly confirmed they worked."
+          }
+        ],
+        "transferStatus": "confirmed"
+      },
+      "createdAt": "2026-03-19T03:09:16.203Z"
+    },
+    {
+      "id": "audit_98dc6cec",
+      "entityType": "solve_event",
+      "entityId": "solve_745f35a3",
+      "action": "evaluate",
+      "details": {
+        "decision": {
+          "id": "decision_2061985c",
+          "solveEventId": "solve_745f35a3",
+          "resolved": true,
+          "confidence": 0.98,
+          "resolutionScore": 96,
+          "helpers": [
+            {
+              "telegramUserId": "user_bob",
+              "messageIds": [
+                "msg_live_1002"
+              ],
+              "contributionScore": 96,
+              "sharePercent": 100,
+              "reason": "Provided the successful troubleshooting steps, and the asker directly confirmed they worked."
+            }
+          ],
+          "abuseFlags": [],
+          "summary": "The asker explicitly confirmed that Bob's suggestion solved the Sepolia USDT transfer issue.",
+          "modelName": "gpt-5.4",
+          "createdAt": "2026-03-19T03:09:23.670Z"
+        }
+      },
+      "createdAt": "2026-03-19T03:09:16.203Z"
+    }
+  ]
+}
